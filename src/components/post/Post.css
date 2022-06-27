@@ -1,13 +1,16 @@
 .post{
-    width: 385px;
+    width: 750px;
     margin: 0px 25px 40px 25px;
     background-color:rgba(153, 153, 153, 0.075);
+    padding:90px;
+    border-radius: 50px;
 }
 .post-img{
     width: 100%;
     height: 280px;
     object-fit: cover;
     border-radius: 10px;
+    
 }
 .post-info{
     display: flex;

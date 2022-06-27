@@ -1,4 +1,49 @@
 .single{
+    display:flex;
+    flex: 9;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    background-color: #fbfbfb;
+    border-radius: 10px; 
+}
+.about-me{
     display: flex;
-    flex:3;
+    flex-direction: column;
+    align-items: center;
+}
+.about-me >span{
+    font-style: italic;
+}
+.about-me > img{
+    width: 250px;
+    height: 250px;
+    
+}
+.about-grad{
+    margin: 10px;
+    padding: 5px;
+    width: 100%;
+    border-top: 1px solid #a7a7a7;
+    border-bottom: 1px solid #a7a7a7;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: start;
+}
+.list-grad{
+    list-style: none;
+}
+
+.about-my-hobbies{
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+}
+.list-hobbies{
+    list-style: none;
+    
 }

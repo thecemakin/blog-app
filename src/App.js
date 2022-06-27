@@ -5,6 +5,9 @@ import Write from "./components/write/Write";
 import Setting from "./pages/setting/Setting";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
+import About from "./pages/about/About";
+import Albums from "./pages/albums/Albums";
+
 import {
   BrowserRouter,
   Routes,
@@ -14,7 +17,7 @@ import {
 } from "react-router-dom";
 
 function App() {
-  const user = false ;
+  const user = true ;
   return (
     <BrowserRouter>
     <Topbar />
@@ -25,6 +28,8 @@ function App() {
         <Route path="/write" element={user ? <Write/> : <Register/>}></Route> 
         <Route path="/settings" element={user ? <Setting/> : <Register/>}></Route>
         <Route path="/post/:postId" element={<Single/>}></Route>
+        <Route path="/about" element={<About/>}></Route>
+        <Route path="/albums" element={<Albums/>}></Route>
       </Routes>
     </BrowserRouter> 
   );
