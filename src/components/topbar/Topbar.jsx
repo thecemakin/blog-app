@@ -1,23 +1,13 @@
 import { Link } from "react-router-dom";
 import "./Topbar.css";
-import { useEffect, useState,useRef } from "react";
+import { useState } from "react";
 
 export default function Topbar() {
     const user = true;
     const [clicked, setClicked] = useState(false);
     const clickHandled = () => {
-        setClicked(clicked => !clicked); 
+        setClicked(clicked => !clicked);
     }
-    const isFirstRender = useRef(true);
-
-    useEffect(() =>{
-        if (isFirstRender.current) {
-            isFirstRender.current = false;
-            return;
-        }
-
-        console.log(clicked);
-    },[clicked])
 
     return (
         <div className="top">
@@ -47,16 +37,27 @@ export default function Topbar() {
             <div className="top-right">
                 {
                     user ? (
+
+                        clicked ? (
+                            <>
+                                <img className="top-image" src="https://pbs.twimg.com/profile_images/1525578089010536451/YoZAcGOi_400x400.jpg" alt="profile-img" />
+                                <input className="input-active" type="text" placeholder="Search"></input>
+                                <button className="btn" onClick={clickHandled}>
+                                    <i className="top-search-icon fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </>
+                        ) :
+                            (
+                                <>
+                                    <img className="top-image" src="https://pbs.twimg.com/profile_images/1525578089010536451/YoZAcGOi_400x400.jpg" alt="profile-img" />
+                                    <input className="input" type="text" placeholder="Search"></input>
+                                    <button className="btn" onClick={clickHandled}>
+                                        <i className="top-search-icon fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </>
+                            )
+                    ) : (
                         <>
-                    
-                            <img className="top-image" src="https://pbs.twimg.com/profile_images/1525578089010536451/YoZAcGOi_400x400.jpg" alt="profile-img" />
-                            <input className="input" type="text" placeholder="Search"></input>
-                            <button className="btn" onClick={clickHandled()}>
-                                <i className="top-search-icon fa-solid fa-magnifying-glass"></i>
-                            </button>
-                        </>
-                    ) :
-                        (
                             <ul className="top-list">
                                 <li className="top-list-item">
                                     <Link style={{ textDecoration: "none", color: "inherit", marginRight: "15px" }} className="link" to="/login">LOGIN</Link>
@@ -65,8 +66,9 @@ export default function Topbar() {
                                     <Link style={{ textDecoration: "none", color: "inherit" }} className="link" to="/register">REGISTER</Link>
                                 </li>
                             </ul>
+                        </>
+                    )
 
-                        )
                 }
 
 

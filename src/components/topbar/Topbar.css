@@ -84,10 +84,17 @@
     transition: transform 0.3s ease;
 }
 
-.input.active {
-    width: 200px;
+.input-active {
+    background-color: #fff;
+    border: 0;
+    font-size: 18px;
+    padding: 15px;
+    height: 30px;
+    width: 120px;
+    transition: width 0.3s ease;
+    outline: none;
 }
 
-.input.active .btn{
+.input-active .btn{
     transform: translateX(198px);
 }
